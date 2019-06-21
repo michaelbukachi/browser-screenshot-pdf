@@ -1,18 +1,27 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button @click="takeScreenshot">Screenshot</button>
+    <button data-html2canvas-ignore v-on:click="takeScreenshot">Screenshot</button>
   </div>
 </template>
 
 <script>
+import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
   methods: {
-    takeScreenshot() {
+    takeScreenshot: async function() {
+      let canvas = await html2canvas(document.body);
+      let doc = jsPDF('l', 'mm', 'a4');
+      let width = doc.internal.pageSize.getWidth();
+      let height = doc.internal.pageSize.getHeight();
+      doc.addImage(canvas, 'PNG', 0, 0, width, height);
+      doc.save('screenshot.pdf');
     }
   }
 }
