@@ -1,5 +1,7 @@
 # browser-screenshots-sample
 
+A simple project to demonstrate taking a browser screenshot and producing a PDF using vue:grin:.
+
 ## Project setup
 ```
 yarn install
