@@ -12,6 +12,7 @@
 <script>
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
+import {Howl} from 'howler';
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -27,7 +28,11 @@ export default {
   methods: {
     takeScreenshot: async function() {
       let self = this;
+      let sound = new Howl({
+        src: ['audio.wav']
+      });
       this.showOverlay = true;
+      sound.play();
       setTimeout(() => {
         self.showOverlay = false;
       }, 500);
