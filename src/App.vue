@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Browser Screenshot Demo!"/>
     <button data-html2canvas-ignore v-on:click="takeScreenshot">Screenshot</button>
     <transition name="fade">
       <div id="overlay" v-if="showOverlay"></div>
