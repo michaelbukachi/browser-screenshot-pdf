@@ -1,5 +1,6 @@
 # Vue Browser Screenshot Demo
 A simple project to demonstrate taking a browser screenshot and producing a PDF using vue:grin:.
+(Tutorial coming soon)
 
 ## Project setup
 ```
